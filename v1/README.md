@@ -6,11 +6,11 @@
 # Alternative way to run project
 ### Using an IDE:
 
-  1. Create a new project
+  1. Create a new project.
   2. Paste all files in the new project folder.
   3. Run the file
-     * "src/negocios/fachada/TesteUsandoFachada.java" for a test without the GUI
-     * "src/negocios/gui/ChameleonFantasies.java" for a test with the GUI
+     * "src/negocios/fachada/TesteUsandoFachada.java" for a test without the GUI.
+     * "src/negocios/gui/ChameleonFantasies.java" for a test with the GUI.
 
 ---
 # Warning
