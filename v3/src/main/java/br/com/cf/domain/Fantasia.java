@@ -46,19 +46,7 @@ public class Fantasia implements Serializable {
 
 	}
 
-	public Fantasia(String nome, String codigo, int quantidade, String precoCompra, String precoVenda,
-			List<Roupa> partes) {
-		super();
-		this.nome = nome;
-		this.codigo = codigo;
-		this.quantidade = quantidade;
-		this.precoCompra = precoCompra;
-		this.precoVenda = precoVenda;
-		this.partes = partes;
-	}
-
-	public Fantasia(String nome, String codigo, int quantidade, String precoCompra, String precoVenda, Roupa chapeu,
-			Roupa parteCima, Roupa parteBaixo, Roupa bracos, Roupa sapatos) {
+	public Fantasia(String nome, String codigo, int quantidade, String precoCompra, String precoVenda) {
 		super();
 		this.nome = nome;
 		this.codigo = codigo;
@@ -67,11 +55,11 @@ public class Fantasia implements Serializable {
 		this.precoVenda = precoVenda;
 
 		List<Roupa> partes = new ArrayList<Roupa>();
-		partes.add(0, (chapeu != null) ? chapeu : new Roupa(this, 'h', ""));
-		partes.add(1, (parteCima != null) ? parteCima : new Roupa(this, 't', ""));
-		partes.add(2, (parteBaixo != null) ? parteBaixo : new Roupa(this, 'b', ""));
-		partes.add(3, (bracos != null) ? bracos : new Roupa(this, 'a', ""));
-		partes.add(4, (sapatos != null) ? sapatos : new Roupa(this, 's', ""));
+		partes.add(0, new Roupa(this, 'h', ""));
+		partes.add(1, new Roupa(this, 't', ""));
+		partes.add(2, new Roupa(this, 'b', ""));
+		partes.add(3, new Roupa(this, 'a', ""));
+		partes.add(4, new Roupa(this, 's', ""));
 		this.partes = partes;
 	}
 

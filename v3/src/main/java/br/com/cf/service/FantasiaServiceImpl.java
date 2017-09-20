@@ -26,7 +26,7 @@ public class FantasiaServiceImpl implements CustomService<FantasiaPOJO> {
 
 		try {
 			Fantasia f = new Fantasia(pojo.getNome(), pojo.getCodigo(), pojo.getQuantidade(), pojo.getPrecoCompra(),
-					pojo.getPrecoVenda(), null, null, null, null, null);
+					pojo.getPrecoVenda());
 			f.setPartes(new Roupa(f, 'h', pojo.getDescChapeu()), new Roupa(f, 't', pojo.getDescParteCima()),
 					new Roupa(f, 'b', pojo.getDescParteBaixo()), new Roupa(f, 'a', pojo.getDescBracos()),
 					new Roupa(f, 's', pojo.getDescSapatos()));

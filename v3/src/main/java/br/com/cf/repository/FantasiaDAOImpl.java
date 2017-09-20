@@ -45,8 +45,7 @@ public class FantasiaDAOImpl extends HibernateDAOImpl<Fantasia> implements Fanta
 		Session s = getSession();
 		List<?> l = s.createQuery("from Fantasia where codigo='" + codigo + "'").list();
 		s.flush();
-		return (l.size() > 0) ? (Fantasia) l.get(0)
-				: new Fantasia("", codigo, 0, "0", "0", null, null, null, null, null);
+		return (l.size() > 0) ? (Fantasia) l.get(0) : new Fantasia("", codigo, 0, "0", "0");
 	}
 
 	public List<Fantasia> listar() {
