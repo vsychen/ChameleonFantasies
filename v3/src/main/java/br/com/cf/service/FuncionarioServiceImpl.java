@@ -1,11 +1,13 @@
 package br.com.cf.service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
 
-import org.apache.commons.validator.routines.EmailValidator;
-import org.apache.commons.validator.routines.RegexValidator;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +18,7 @@ import br.com.cf.exceptions.DataFieldException;
 import br.com.cf.repository.FuncionarioDAO;
 
 @Service("FuncionarioService")
-public class FuncionarioServiceImpl implements CustomService<FuncionarioPOJO> {
+public class FuncionarioServiceImpl implements FuncionarioService {
 	@Autowired
 	private FuncionarioDAO fdao;
 
@@ -120,42 +122,27 @@ public class FuncionarioServiceImpl implements CustomService<FuncionarioPOJO> {
 		return lista;
 	}
 
-	private void checarNome(String nome) {
-		if (nome.length() < 5 || nome.length() > 100)
-			throw new DataFieldException();
-	}
-
 	private void checarCpf(String cpf) {
-		if (!cpf.equals("") && !(new RegexValidator("(([0-9]){3}.){2}([0-9]){3}-([0-9]){2}")).isValid(cpf))
-			throw new DataFieldException();
+		FuncionarioPOJO pojo = new FuncionarioPOJO();
+		pojo.setCpf(cpf);
+
+		Set<ConstraintViolation<FuncionarioPOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
+
+		constraintViolations.iterator().forEachRemaining(new Consumer<ConstraintViolation<FuncionarioPOJO>>() {
+			@Override
+			public void accept(ConstraintViolation<FuncionarioPOJO> t) {
+				if (constraintViolations.iterator().next().getMessage().equals("CPF inválido"))
+					throw new DataFieldException();
+			}
+		});
 	}
 
-	private void checarEmail(String email) {
-		if (!EmailValidator.getInstance().isValid(email))
-			throw new DataFieldException();
-	}
+	private void checarInfo(FuncionarioPOJO pojo) {
+		Set<ConstraintViolation<FuncionarioPOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
 
-	private void checarTelefone(String telefone) {
-		if (!(new RegexValidator("\\(([0-9]{2})\\)([0-9]){5}-([0-9]){4}")).isValid(telefone))
+		if (!constraintViolations.isEmpty())
 			throw new DataFieldException();
-	}
-
-	private void checarCargo(String cargo) {
-		if (!cargo.equals("admin") && !cargo.equals("cashier") && !cargo.equals("stock"))
-			throw new DataFieldException();
-	}
-
-	private void checarSalario(String salario) {
-		if ((new BigDecimal(salario)).compareTo(new BigDecimal("1000")) < 0)
-			throw new DataFieldException();
-	}
-
-	private void checarInfo(FuncionarioPOJO f) {
-		checarNome(f.getNome());
-		checarCpf(f.getCpf());
-		checarEmail(f.getEmail());
-		checarTelefone(f.getTelefone());
-		checarCargo(f.getCargo());
-		checarSalario(f.getSalario());
 	}
 }

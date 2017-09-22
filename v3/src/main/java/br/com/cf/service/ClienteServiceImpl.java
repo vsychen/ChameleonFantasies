@@ -1,10 +1,13 @@
 package br.com.cf.service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
 
-import org.apache.commons.validator.routines.RegexValidator;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +18,7 @@ import br.com.cf.exceptions.DataFieldException;
 import br.com.cf.repository.ClienteDAO;
 
 @Service("ClienteService")
-public class ClienteServiceImpl implements CustomService<ClientePOJO> {
+public class ClienteServiceImpl implements ClienteService {
 	@Autowired
 	private ClienteDAO cdao;
 
@@ -105,24 +108,27 @@ public class ClienteServiceImpl implements CustomService<ClientePOJO> {
 		return lista;
 	}
 
-	private void checarNome(String nome) {
-		if (nome.length() < 5 || nome.length() > 100)
-			throw new DataFieldException();
-	}
-
 	private void checarCpf(String cpf) {
-		if (!cpf.equals("") && !(new RegexValidator("(([0-9]){3}.){2}([0-9]){3}-([0-9]){2}")).isValid(cpf))
-			throw new DataFieldException();
-	}
+		ClientePOJO pojo = new ClientePOJO();
+		pojo.setCpf(cpf);
 
-	private void checarGastos(String gastos) {
-		if ((new BigDecimal(gastos)).signum() == -1)
-			throw new DataFieldException();
+		Set<ConstraintViolation<ClientePOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
+
+		constraintViolations.iterator().forEachRemaining(new Consumer<ConstraintViolation<ClientePOJO>>() {
+			@Override
+			public void accept(ConstraintViolation<ClientePOJO> t) {
+				if (constraintViolations.iterator().next().getMessage().equals("CPF inválido"))
+					throw new DataFieldException();
+			}
+		});
 	}
 
 	private void checarInfo(ClientePOJO pojo) {
-		checarNome(pojo.getNome());
-		checarCpf(pojo.getCpf());
-		checarGastos(pojo.getGastos());
+		Set<ConstraintViolation<ClientePOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
+
+		if (!constraintViolations.isEmpty())
+			throw new DataFieldException();
 	}
 }

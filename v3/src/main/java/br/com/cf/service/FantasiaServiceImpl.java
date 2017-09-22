@@ -3,20 +3,30 @@ package br.com.cf.service;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.function.Consumer;
 
-import org.apache.commons.validator.routines.RegexValidator;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.cf.domain.Cliente;
 import br.com.cf.domain.Fantasia;
 import br.com.cf.domain.Roupa;
+import br.com.cf.domain.pojos.ClientePOJO;
 import br.com.cf.domain.pojos.FantasiaPOJO;
 import br.com.cf.exceptions.DataFieldException;
+import br.com.cf.exceptions.InexistentObjectException;
+import br.com.cf.repository.ClienteDAO;
 import br.com.cf.repository.FantasiaDAO;
 
-@Service("FantasiaPOJOService")
-public class FantasiaServiceImpl implements CustomService<FantasiaPOJO> {
+@Service("FantasiaService")
+public class FantasiaServiceImpl implements FantasiaService {
+	@Autowired
+	private ClienteDAO cdao;
 	@Autowired
 	private FantasiaDAO fdao;
 
@@ -147,31 +157,144 @@ public class FantasiaServiceImpl implements CustomService<FantasiaPOJO> {
 		return lista;
 	}
 
-	private void checarNome(String nome) {
-		if (nome.length() < 2 || nome.length() > 100)
+	@Transactional(rollbackFor = Exception.class)
+	public void comprarFantasias(String codigo, int quantidade) {
+		checarCodigo(codigo);
+
+		if (quantidade <= 0)
 			throw new DataFieldException();
+
+		try {
+			Fantasia f = fdao.procurar(codigo);
+
+			if (f.getNome().equals(""))
+				throw new InexistentObjectException(f.getClass().getName());
+
+			f.setQuantidade(f.getQuantidade() + quantidade);
+			fdao.atualizar(f);
+		} catch (RuntimeException re) {
+			re.printStackTrace();
+			throw new RuntimeException("Não é possível comprar a fantasia selecionada.");
+		}
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public void venderFantasias(String codigo, int quantidade) {
+		checarCodigo(codigo);
+
+		if (quantidade <= 0)
+			throw new DataFieldException();
+
+		try {
+			Fantasia f = fdao.procurar(codigo);
+
+			if (f.getNome().equals(""))
+				throw new InexistentObjectException(f.getClass().getName());
+			if (f.getQuantidade() < quantidade)
+				throw new RuntimeException("Quantidade indisponível.");
+
+			f.setQuantidade(f.getQuantidade() - quantidade);
+			fdao.atualizar(f);
+		} catch (RuntimeException re) {
+			re.printStackTrace();
+			throw new RuntimeException("Não é possível vender a fantasia selecionada.");
+		}
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public void venderFantasias(String codigo, String cpf, int quantidade) {
+		checarCpf(cpf);
+		checarCodigo(codigo);
+
+		if (quantidade <= 0)
+			throw new DataFieldException();
+
+		try {
+			Cliente c = cdao.procurar(cpf);
+			Fantasia f = fdao.procurar(codigo);
+
+			if (c.getNome().equals(""))
+				throw new InexistentObjectException(c.getClass().getName());
+			else if (f.getNome().equals(""))
+				throw new InexistentObjectException(f.getClass().getName());
+			if (f.getQuantidade() < quantidade)
+				throw new RuntimeException("Quantidade indisponível.");
+
+			c.setGastos(new BigDecimal(f.getPrecoVenda()).multiply(new BigDecimal(quantidade)).stripTrailingZeros()
+					.toPlainString());
+			f.setQuantidade(f.getQuantidade() - quantidade);
+			cdao.atualizar(c);
+			fdao.atualizar(f);
+		} catch (RuntimeException re) {
+			re.printStackTrace();
+			throw new RuntimeException("Não é possível vender a fantasia selecionada.");
+		}
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public void mudarPrecos(String codigo, String precoCompra, String precoVenda) {
+		checarCodigo(codigo);
+
+		if (precosInvalidos(precoCompra, precoVenda))
+			throw new DataFieldException();
+
+		try {
+			Fantasia f = fdao.procurar(codigo);
+
+			if (f.getNome().equals(""))
+				throw new InexistentObjectException(f.getClass().getName());
+
+			f.setPrecoCompra(precoCompra);
+			f.setPrecoVenda(precoVenda);
+			fdao.atualizar(f);
+		} catch (RuntimeException re) {
+			re.printStackTrace();
+			throw new RuntimeException("Não foi possível mudar os preços da fantasia selecionada.");
+		}
+	}
+
+	private void checarCpf(String cpf) {
+		ClientePOJO pojo = new ClientePOJO();
+		pojo.setCpf(cpf);
+
+		Set<ConstraintViolation<ClientePOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
+
+		constraintViolations.iterator().forEachRemaining(new Consumer<ConstraintViolation<ClientePOJO>>() {
+			@Override
+			public void accept(ConstraintViolation<ClientePOJO> t) {
+				if (constraintViolations.iterator().next().getMessage().equals("CPF inválido"))
+					throw new DataFieldException();
+			}
+		});
 	}
 
 	private void checarCodigo(String codigo) {
-		if (!codigo.equals("") && !(new RegexValidator("([a-zA-Z]){2}([0-9]){4}")).isValid(codigo))
-			throw new DataFieldException();
+		FantasiaPOJO pojo = new FantasiaPOJO();
+		pojo.setCodigo(codigo);
+
+		Set<ConstraintViolation<FantasiaPOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
+
+		constraintViolations.iterator().forEachRemaining(new Consumer<ConstraintViolation<FantasiaPOJO>>() {
+			@Override
+			public void accept(ConstraintViolation<FantasiaPOJO> t) {
+				if (constraintViolations.iterator().next().getMessage().equals("Código inválido"))
+					throw new DataFieldException();
+			}
+		});
 	}
 
-	private void checarQuantidade(int quantidade) {
-		if (quantidade < 0)
-			throw new DataFieldException();
+	private boolean precosInvalidos(String precoCompra, String precoVenda) {
+		BigDecimal pc = new BigDecimal(precoCompra), pv = new BigDecimal(precoVenda);
+		return pc.compareTo(new BigDecimal("0")) <= 0 || pv.compareTo(pc) <= 0;
 	}
 
-	private void checarPrecos(String precoCompra, String precoVenda) {
-		BigDecimal pc = new BigDecimal(precoCompra), pv = new BigDecimal(precoVenda), zero = new BigDecimal("0");
-		if (pc.compareTo(zero) < 0 || pv.compareTo(pc) <= 0)
-			throw new DataFieldException();
-	}
+	private void checarInfo(FantasiaPOJO pojo) {
+		Set<ConstraintViolation<FantasiaPOJO>> constraintViolations = Validation.buildDefaultValidatorFactory()
+				.getValidator().validate(pojo);
 
-	private void checarInfo(FantasiaPOJO f) {
-		checarNome(f.getNome());
-		checarCodigo(f.getCodigo());
-		checarQuantidade(f.getQuantidade());
-		checarPrecos(f.getPrecoCompra(), f.getPrecoVenda());
+		if (!constraintViolations.isEmpty() || precosInvalidos(pojo.getPrecoCompra(), pojo.getPrecoVenda()))
+			throw new DataFieldException();
 	}
 }
