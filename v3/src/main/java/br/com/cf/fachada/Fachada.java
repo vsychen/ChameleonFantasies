@@ -8,18 +8,20 @@ import org.springframework.stereotype.Service;
 import br.com.cf.domain.pojos.ClientePOJO;
 import br.com.cf.domain.pojos.FantasiaPOJO;
 import br.com.cf.domain.pojos.FuncionarioPOJO;
-import br.com.cf.service.CustomService;
+import br.com.cf.service.ClienteService;
+import br.com.cf.service.FantasiaService;
+import br.com.cf.service.FuncionarioService;
 
 @Service("Fachada")
 public class Fachada {
 	@Autowired
-	CustomService<ClientePOJO> clientes;
+	ClienteService clientes;
 
 	@Autowired
-	CustomService<FantasiaPOJO> fantasias;
+	FantasiaService fantasias;
 
 	@Autowired
-	CustomService<FuncionarioPOJO> funcionarios;
+	FuncionarioService funcionarios;
 
 	private Fachada() {
 
@@ -48,7 +50,7 @@ public class Fachada {
 
 	// FantasiaServiceImpl
 	public void salvarFantasia(FantasiaPOJO f) {
-		fantasias.salvar(f);
+		fantasias.salvarOuAtualizar(f);
 	}
 
 	public FantasiaPOJO procurarFantasia(String codigo) {
@@ -57,6 +59,21 @@ public class Fachada {
 
 	public void editarFantasia(FantasiaPOJO f) {
 		fantasias.atualizar(f);
+	}
+
+	public void comprarFantasias(String codigo, int quantidade) {
+		fantasias.comprarFantasias(codigo, quantidade);
+	}
+
+	public void venderFantasias(String codigo, String cpf, int quantidade) {
+		if (cpf.equals(""))
+			fantasias.venderFantasias(codigo, quantidade);
+		else
+			fantasias.venderFantasias(codigo, cpf, quantidade);
+	}
+
+	public void mudarPrecos(String codigo, String precoCompra, String precoVenda) {
+		fantasias.mudarPrecos(codigo, precoCompra, precoVenda);
 	}
 
 	public void removerFantasia(String codigo) {
