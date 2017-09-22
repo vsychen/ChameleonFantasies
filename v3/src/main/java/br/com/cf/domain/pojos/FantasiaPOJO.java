@@ -1,15 +1,32 @@
 package br.com.cf.domain.pojos;
 
+import java.math.BigDecimal;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import br.com.cf.constraints.Codigo;
+
 public class FantasiaPOJO {
+	@Size(min = 2, max = 100)
 	private String nome;
+	@Codigo
 	private String codigo;
+	@Min(0)
 	private int quantidade;
+	@Min(1)
 	private String precoCompra;
+	@Min(2)
 	private String precoVenda;
+	@Size(max = 200)
 	private String descChapeu;
+	@Size(max = 200)
 	private String descParteCima;
+	@Size(max = 200)
 	private String descParteBaixo;
+	@Size(max = 200)
 	private String descBracos;
+	@Size(max = 200)
 	private String descSapatos;
 
 	public FantasiaPOJO() {
@@ -54,7 +71,7 @@ public class FantasiaPOJO {
 	}
 
 	public void setPrecoCompra(String precoCompra) {
-		this.precoCompra = precoCompra;
+		this.precoCompra = new BigDecimal(precoCompra).stripTrailingZeros().toPlainString();
 	}
 
 	public String getPrecoVenda() {
@@ -62,7 +79,7 @@ public class FantasiaPOJO {
 	}
 
 	public void setPrecoVenda(String precoVenda) {
-		this.precoVenda = precoVenda;
+		this.precoVenda = new BigDecimal(precoVenda).stripTrailingZeros().toPlainString();
 	}
 
 	public String getDescChapeu() {
