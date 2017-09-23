@@ -1,16 +1,20 @@
+# Download
+
+[JAR File](https://cdn.rawgit.com/vsychen/chameleonfantasies/2739d9ec/v1/ChameleonFantasies_v1.jar)
+
 # Instructions
 
-  Run "ChameleonFantasies_v1.jar"
+Run "ChameleonFantasies_v1.jar"
 
 ---
 # Alternative way to run project
 ### Using an IDE:
 
-  1. Create a new project.
-  2. Paste all files in the new project folder.
-  3. Run the file
-     * "src/negocios/fachada/TesteUsandoFachada.java" for a test without the GUI.
-     * "src/negocios/gui/ChameleonFantasies.java" for a test with the GUI.
+1. Create a new project.
+2. Paste all files in the new project folder.
+3. Run the file
+   * "src/negocios/fachada/TesteUsandoFachada.java" for a test without the GUI.
+   * "src/negocios/gui/ChameleonFantasies.java" for a test with the GUI.
 
 ---
 # Warning
@@ -20,5 +24,3 @@
   But, hey, what does this mean?
 
   This mean that when you close the application, all information will be lost. Do not worry. In v2 the only repository used was JSON files, meaning that information can be saved.
-
----
