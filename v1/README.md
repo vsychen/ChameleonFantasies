@@ -1,13 +1,17 @@
 # Download
 
 [JAR File](https://cdn.rawgit.com/vsychen/chameleonfantasies/2739d9ec/v1/ChameleonFantasies_v1.jar)
+[Source Files](https://github.com/vsychen/chameleonfantasies/tree/master/v1)
 
+---
 # Instructions
 
 Run "ChameleonFantasies_v1.jar"
 
 ---
 # Alternative way to run project
+
+1. Clone "https://github.com/vsychen/chameleonfantasies"
 ### Using an IDE:
 
 1. Create a new project.
