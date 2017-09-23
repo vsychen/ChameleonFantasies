@@ -30,6 +30,6 @@ Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, al�
 ---
 ## Links Relevantes
 
-[Vers찾o 1](https://vsychen.github.io/chameleonfantasies/v1)
-[Vers찾o 2](https://vsychen.github.io/chameleonfantasies/v2)
-[Vers찾o 3](https://vsychen.github.io/chameleonfantasies/v3)
+* [Vers찾o 1](https://vsychen.github.io/chameleonfantasies/v1)
+* [Vers찾o 2](https://vsychen.github.io/chameleonfantasies/v2)
+* [Vers찾o 3](https://vsychen.github.io/chameleonfantasies/v3)
