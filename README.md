@@ -4,15 +4,15 @@
 
 Aplicação para gerenciamento de clientes, fantasias e funcionários.
 
-#### v1
+#### versão 1
 
 Projeto da disciplina de Introdução à Programação, do curso de Ciências da Computação do Centro de Informática, UFPE.
 
-#### v2
+#### versão 2
 
 Aprimoramento da versão 1.
 
-#### v3
+#### versão 3
 
 Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.
 
