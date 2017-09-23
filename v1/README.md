@@ -1,7 +1,7 @@
 # Download
 
-[JAR File](https://cdn.rawgit.com/vsychen/chameleonfantasies/2739d9ec/v1/ChameleonFantasies_v1.jar)
-[Source Files](https://github.com/vsychen/chameleonfantasies/tree/master/v1)
+* [JAR File](https://cdn.rawgit.com/vsychen/chameleonfantasies/2739d9ec/v1/ChameleonFantasies_v1.jar)
+* [Source Files](https://github.com/vsychen/chameleonfantasies/tree/master/v1)
 
 ---
 # Instructions
