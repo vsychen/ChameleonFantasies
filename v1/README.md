@@ -6,16 +6,14 @@
 ---
 # Instructions
 
-Run "ChameleonFantasies_v1.jar"
+1. Download JAR file.
+2. Run "ChameleonFantasies_v1.jar"
 
 ---
 # Alternative way to run project
 
-1. Clone "https://github.com/vsychen/chameleonfantasies"
-### Using an IDE:
-
-1. Create a new project.
-2. Paste all files in the new project folder.
+1. Download source files and extract them.
+2. Create a [new project] and paste all files in the [new project] folder
 3. Run the file
    * "src/negocios/fachada/TesteUsandoFachada.java" for a test without the GUI.
    * "src/negocios/gui/ChameleonFantasies.java" for a test with the GUI.
