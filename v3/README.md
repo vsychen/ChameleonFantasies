@@ -3,14 +3,14 @@
 ## Descrição
 Uma aplicação para gerenciamento de clientes, fantasias e funcionários.
 
-Tecnologias utilizadas: 
- * Eclipse
- * Maven
- * Java
- * Spring MVC
- * Hibernate
- * JSP/JSTL
- * JUnit
+Tecnologias utilizadas/Versão: 
+ * Sprint Tool Suite [Eclipse Oxygen (4.7.0)]
+ * Maven [Apache Maven 3.5.0]
+ * Java [Java Development Kit 1.8]
+ * Spring MVC [Spring Framework 4.3.5]
+ * Hibernate [Hibernate 4.3.8]
+ * JSP/JSTL [Java Standard Tag Library 1.2]
+ * JUnit [JUnit 4.12]
 
 ---
 ## Espaço Reservado

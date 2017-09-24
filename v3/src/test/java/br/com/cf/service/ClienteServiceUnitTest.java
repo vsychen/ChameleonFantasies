@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.cf.configuration.TestConfig;
 import br.com.cf.domain.pojos.ClientePOJO;
+import br.com.cf.service.ClienteService;
 import br.com.cf.exceptions.DataFieldException;
 
 @RunWith(SpringRunner.class)
@@ -95,8 +96,22 @@ public class ClienteServiceUnitTest {
 
 	@Test(expected = DataFieldException.class)
 	@Transactional
-	public void testCpfInvalido() {
+	public void testCpfInvalido01() {
 		pojo.setCpf("1");
+		service.salvar(pojo);
+	}
+
+	@Test(expected = DataFieldException.class)
+	@Transactional
+	public void testCpfInvalido02() {
+		pojo.setCpf("a");
+		service.salvar(pojo);
+	}
+
+	@Test(expected = DataFieldException.class)
+	@Transactional
+	public void testCpfInvalido03() {
+		pojo.setCpf("111.111.111-11");
 		service.salvar(pojo);
 	}
 
