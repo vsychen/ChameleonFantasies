@@ -123,6 +123,9 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 	}
 
 	private void checarCpf(String cpf) {
+		if (cpf.equals(""))
+			return;
+
 		FuncionarioPOJO pojo = new FuncionarioPOJO();
 		pojo.setCpf(cpf);
 

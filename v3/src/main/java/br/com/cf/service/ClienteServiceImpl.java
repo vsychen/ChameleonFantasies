@@ -109,6 +109,9 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	private void checarCpf(String cpf) {
+		if (cpf.equals(""))
+			return;
+
 		ClientePOJO pojo = new ClientePOJO();
 		pojo.setCpf(cpf);
 

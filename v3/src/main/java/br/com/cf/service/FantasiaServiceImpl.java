@@ -270,6 +270,9 @@ public class FantasiaServiceImpl implements FantasiaService {
 	}
 
 	private void checarCodigo(String codigo) {
+		if (codigo.equals(""))
+			return;
+
 		FantasiaPOJO pojo = new FantasiaPOJO();
 		pojo.setCodigo(codigo);
 
