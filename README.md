@@ -14,7 +14,9 @@ Aprimoramento da versão 1.
 
 #### versão 3
 
-Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.
+Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.*
+
+###### *ainda não implementado completamente
 
 ---
 ## [Versão mais recente (v3)](https://vsychen.github.io/chameleonfantasies/v3)
