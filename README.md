@@ -22,7 +22,7 @@ Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, al�
 Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js.
 
 ---
-## [Versão mais recente (v4)](/v4)
+## [Versão mais recente (v4)](/chameleonfantasies/v4)
 
 ### Casos de Uso
 
@@ -35,6 +35,6 @@ Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js
 ---
 ## Links Relevantes
 
-* [Versão 1](/old_versions/v1)
-* [Versão 2](/old_versions/v2)
-* [Versão 3](/old_versions/v3)
+* [Versão 1](/chameleonfantasies/old_versions/v1)
+* [Versão 2](/chameleonfantasies/old_versions/v2)
+* [Versão 3](/chameleonfantasies/old_versions/v3)
