@@ -16,10 +16,13 @@ Aprimoramento da versão 1.
 
 Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.*
 
-###### *ainda não implementado completamente
+*não implementado completamente
+
+#### versão 4
+Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js.
 
 ---
-## [Versão mais recente (v3)](https://vsychen.github.io/chameleonfantasies/v3)
+## [Versão mais recente (v4)](/v4)
 
 ### Casos de Uso
 
@@ -32,6 +35,6 @@ Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, al�
 ---
 ## Links Relevantes
 
-* [Versão 1](https://vsychen.github.io/chameleonfantasies/v1)
-* [Versão 2](https://vsychen.github.io/chameleonfantasies/v2)
-* [Versão 3](https://vsychen.github.io/chameleonfantasies/v3)
+* [Versão 1](/old_versions/v1)
+* [Versão 2](/old_versions/v2)
+* [Versão 3](/old_versions/v3)
