@@ -1,0 +1,29 @@
+<!-- Medieval Sharp Font -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=MedievalSharp" />
+
+<nav>
+  <% include ../partials/navbar %>
+</nav>
+
+<% include ../partials/error %>
+
+<div style="overflow:hidden">
+  <div class="login-box">
+    <div style="display:inline-block">
+      <img src="/images/logo.png" style="width:150px; height:150px" />
+    </div>
+    <div style="display:inline-block">
+      <div style="margin-left:3vw">
+        <form class="medieval-text" action="/login" method="post">
+          <label>E-mail: </label>
+          <br><input type="text" class="medieval-text" name="email" placeHolder="E-mail"><br>
+          <label>Senha: </label>
+          <br><input type="password" class="medieval-text" name="senha" placeHolder="Senha"><br>
+          <input type="submit" value="Entrar" class="medieval-text" style="margin-top:20px;">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

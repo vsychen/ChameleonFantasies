@@ -1,0 +1,197 @@
+/*
+   =================================
+   =      Chameleon Fantasies      =
+   =================================
+*/
+/*
+   - Commons -
+*/
+.medieval-text {
+  font-family: MedievalSharp;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
+/*
+   - Table -
+*/
+table {
+  width: 100%;
+  list-style: none;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #aaf442;
+}
+
+tr:first-child {
+  font-weight: bold;
+  background-color: #73b714;
+}
+
+/*
+   - Navbar -
+*/
+nav {
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: #199900;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 4px 5px;
+}
+
+.nav-menu {
+  float: right;
+  margin-right: 2vw;
+  margin-top: 2vh;
+}
+
+.nav-item {
+  float: left;
+  padding: 1vh 1vw;
+  border-radius: 3px;
+  transition: all .7s ease-in-out;
+  font-size: 18px;
+  list-style: none;
+}
+
+.nav-item a {
+  color: #262626;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: #30b700;
+}
+
+/*
+   - Error Message -
+*/
+.error {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+  color: #630700;
+  z-index: 9999;
+}
+
+/*
+   - Footer -
+*/
+.go-back {
+  position: fixed;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+}
+
+/*
+   - Miscellaneous -
+*/
+.title {
+  font-size: 56px;
+  color: #1c1c1c;
+  text-shadow: 1px 1px #000000;
+  z-index: 9999;
+}
+
+.sub-title {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.screen {
+  width: 100vw;
+  height: 90vh;
+  top: 10vh;
+  overflow: hidden;
+}
+
+.blank-bg {
+  width: 90%;
+  height: 100%;
+  background-color:#ffffff;
+}
+
+.scroll {
+  width: 85vw;
+  height: 65vh;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+.catalogo-item {
+  width: 160px;
+  height: 100px;
+  text-align: center;
+  margin: 0px 5px 120px 5px;
+  position: relative;
+  float: left;
+  list-style: none;
+}
+
+.form-box {
+  min-height: 200px;
+  margin-left: 25vw;
+  margin-top: 60px;
+  overflow: hidden;
+}
+
+.login-box {
+  width: 30vw;
+  height: 40vh;
+  min-height: 200px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.info-box {
+  width: 50vw;
+  height: 40vh;
+  min-height: 200px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.remove {
+  width: 40px;
+}
+
+.add-label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}

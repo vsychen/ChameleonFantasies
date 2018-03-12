@@ -1,0 +1,29 @@
+<!-- Medieval Sharp Font -->
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=MedievalSharp" />
+
+<nav>
+  <% include ../partials/navbar %>
+</nav>
+
+<div class="medieval-text sub-title">
+  <h1>Novo Usuário</h1>
+</div>
+<div class="form-box">
+  <form class="medieval-text" action="/adduser" method="post" enctype="multipart/form-data">
+    <label class="add-label">Nome: </label>
+    <input type="text" name="nome" placeHolder="Nome" size="50" /><br>
+
+    <label class="add-label">Cpf: </label>
+    <input type="text" name="cpf" placeHolder="Cpf" size="50" /><br>
+
+    <label class="add-label">E-mail: </label>
+    <input type="text" name="email" placeHolder="E-mail" size="50" /><br>
+
+    <label class="add-label">Foto de Perfil: </label>
+    <input type="file" name="imagem" /><br>
+
+    <input type="submit" value="Cadastrar Novo Usuário" style="margin-top:20px; margin-left:19vw" />
+  </form>
+</div>
+
+<% include ../partials/footer %>
