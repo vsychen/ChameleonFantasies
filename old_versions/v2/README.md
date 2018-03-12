@@ -1,7 +1,7 @@
 # Download
 
-* [JAR File](/ChameleonFantasies_v2.jar)
-* [Source Files](/v2.zip)
+* [JAR File](/chameleonfantasies/v2/ChameleonFantasies_v2.jar)
+* [Source Files](/chameleonfantasies/v2/v2.zip)
 
 ---
 
