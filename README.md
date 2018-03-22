@@ -1,40 +1,46 @@
-# Chameleon Fantasies
----
+# Chameleon Fantasies v3
+
 ## Descrição
+Uma aplicação para gerenciamento de clientes, fantasias e funcionários.
 
-Aplicação para gerenciamento de clientes, fantasias e funcionários.
-
-#### versão 1
-
-Projeto da disciplina de Introdução à Programação, do curso de Ciências da Computação do Centro de Informática, UFPE.
-
-#### versão 2
-
-Aprimoramento da versão 1.
-
-#### versão 3
-
-Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.*
-
-*não implementado completamente
-
-#### versão 4
-Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js.
+Tecnologias utilizadas/Versão: 
+ * Sprint Tool Suite [Eclipse Oxygen (4.7.0)]
+ * Maven [Apache Maven 3.5.0]
+ * Java [Java Development Kit 1.8]
+ * Spring MVC [Spring Framework 4.3.5]
+ * Hibernate [Hibernate 4.3.8]
+ * JSP/JSTL [Java Standard Tag Library 1.2]
+ * JUnit [JUnit 4.12]
 
 ---
-## [Versão mais recente (v4)](/chameleonfantasies/v4)
-
-### Casos de Uso
+## Casos de Uso
 
 ![Casos de Uso]()
 
-### Diagrama de Componentes do Sistema
+## Diagrama de Componentes do Sistema
 
 ![Diagrama de Componentes do Sistema]()
 
----
-## Links Relevantes
+## Downloads
 
-* [Versão 1](/chameleonfantasies/old_versions/v1)
-* [Versão 2](/chameleonfantasies/old_versions/v2)
-* [Versão 3](/chameleonfantasies/old_versions/v3)
+* [Source Files](/chameleonfantasies/old_versions/v3/v3.zip)
+
+---
+## Instruções
+
+1. Para executar a aplicação utilize
+    * *mvn clean install jetty:run*
+2. Para executar apenas a aplicação utilize
+    * *mvn clean install jetty:run -DskipTests*
+3. Para executar apenas os testes utilize
+    * *mvn clean test*
+
+---
+## Observações
+
+Lembrar de configurar o MySQL na máquina antes de qualquer outra ação. Os valores configurados no hibernate.properties são:
+ * Username: **cf**
+ * Password: **1234**
+ * Url: **mysql://localhost:3306/chameleonfantasies**
+
+Caso seja decidido algum outro valor para algum dos três campos, alterar o arquivo **hibernate.properties**
