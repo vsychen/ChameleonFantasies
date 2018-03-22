@@ -1,40 +1,25 @@
-# Chameleon Fantasies
----
-## Descrição
+# Download
 
-Aplicação para gerenciamento de clientes, fantasias e funcionários.
-
-#### versão 1
-
-Projeto da disciplina de Introdução à Programação, do curso de Ciências da Computação do Centro de Informática, UFPE.
-
-#### versão 2
-
-Aprimoramento da versão 1.
-
-#### versão 3
-
-Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.*
-
-*não implementado completamente
-
-#### versão 4
-Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js.
+* [JAR File](/chameleonfantasies/old_versions/v2/ChameleonFantasies_v2.jar)
+* [Source Files](/chameleonfantasies/old_versions/v2/v2.zip)
 
 ---
-## [Versão mais recente (v4)](/chameleonfantasies/v4)
 
-### Casos de Uso
+# Instructions
 
-![Casos de Uso]()
+1. Download the JAR file.
+2. Run "ChameleonFantasies_v2.jar"
 
-### Diagrama de Componentes do Sistema
+### Notes
 
-![Diagrama de Componentes do Sistema]()
+To run the project with the images the .jar file needs to be in the same folder than the image folder, i.e., if the images are in '../abc/img/[images]', the .jar file needs to be in '../abc/[jar file]'
 
 ---
-## Links Relevantes
+# Alternative way to run project
 
-* [Versão 1](/chameleonfantasies/old_versions/v1)
-* [Versão 2](/chameleonfantasies/old_versions/v2)
-* [Versão 3](/chameleonfantasies/old_versions/v3)
+1. Download the source files.
+2. Create a [new project] and paste all files in the [new project] folder.
+3. Import all .jar files present in the v2 project folder, except "ChameleonFantasies_v2.jar".
+4. Run
+   * "src/main/gui/views/ChameleonFantasies.java" for a test with the GUI
+   * "src/test/SystemSuiteTest.java" to test ALL the test cases in the project (using JUnit)
