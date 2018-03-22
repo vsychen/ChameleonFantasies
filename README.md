@@ -1,40 +1,29 @@
-# Chameleon Fantasies
----
+# Chameleon Fantasies v4
+
 ## Descrição
+Uma aplicação de catálogo de fantasias.
 
-Aplicação para gerenciamento de clientes, fantasias e funcionários.
+Tecnologias utilizadas/Versão: 
+ * Sails.js [Framework MVC baseado em Node.js]
 
-#### versão 1
+## Downloads
 
-Projeto da disciplina de Introdução à Programação, do curso de Ciências da Computação do Centro de Informática, UFPE.
-
-#### versão 2
-
-Aprimoramento da versão 1.
-
-#### versão 3
-
-Criada para adquirir e aprofundar conhecimentos das arquiteturas MVC e REST, além de exercitar os conhecimentos sobre UML, adquiridos na disciplina de Análise e Projeto de Sistemas, também do curso de Ciências da Computação.*
-
-*não implementado completamente
-
-#### versão 4
-Versão 3 simplificada, implementada em Node.js, utilizando o framework Sails.js.
+* [Source Files](/chameleonfantasies/v4/v4.zip)
 
 ---
-## [Versão mais recente (v4)](/chameleonfantasies/v4)
+## Instruções
 
-### Casos de Uso
-
-![Casos de Uso]()
-
-### Diagrama de Componentes do Sistema
-
-![Diagrama de Componentes do Sistema]()
+1. Instale o Sails.js
+    * *npm install sails -g*
+2. Execute a aplicação
+    * *sails lift*
 
 ---
-## Links Relevantes
+## Observações
 
-* [Versão 1](/chameleonfantasies/old_versions/v1)
-* [Versão 2](/chameleonfantasies/old_versions/v2)
-* [Versão 3](/chameleonfantasies/old_versions/v3)
+Lembrar de configurar o MySQL na máquina antes de qualquer outra ação. Os valores estão configurados em **/config/connections.js** e são:
+ * Username: **cf**
+ * Password: **1234**
+ * Url: **mysql://localhost:3306/chameleonfantasies**
+
+Caso seja decidido algum outro valor para algum dos três campos, alterar o arquivo **/config/connections.js**
