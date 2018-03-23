@@ -81,7 +81,6 @@ module.exports.connections = {
     database: process.env.PG_DATABASE || 'chameleonfantasies', //optional
     user: process.env.PG_USER || 'cf', //optional
     password: process.env.PG_PASSWORD || '1234', //optional
-    poolSize: 50
   }
 
 
