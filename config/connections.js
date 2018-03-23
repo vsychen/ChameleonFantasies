@@ -81,7 +81,7 @@ module.exports.connections = {
     database: process.env.DATABASE || 'chameleonfantasies', //optional
     user: process.env.USER || 'cf', //optional
     password: process.env.PASSWORD || '1234', //optional
-    ssl: process.env.SSL || false,
+    ssl: (process.env.SSL) ? (process.env.SSL == 'true') : false,
     poolSize: process.env.PS || 10
   }
 
