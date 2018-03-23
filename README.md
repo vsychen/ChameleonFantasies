@@ -21,10 +21,11 @@ Tecnologias utilizadas/Versão:
    * adapter
    * host
    * port
+   * database
    * user
    * password
-   * database
-   * poolSize (caso esteja usando MySQL, delete este valor)
+   * ssl (remova este valor)
+   * poolSize (caso esteja usando MySQL, remova este valor)
 
 ---
 ## Instruções

@@ -76,12 +76,13 @@ module.exports.connections = {
   ***************************************************************************/
   chameleonfantasies: {
     adapter: 'sails-postgresql',
-    host: process.env.PG_HOSTNAME || 'localhost',
-    port: process.env.PG_PORT || '3307',
-    database: process.env.PG_DATABASE || 'chameleonfantasies', //optional
-    user: process.env.PG_USER || 'cf', //optional
-    password: process.env.PG_PASSWORD || '1234', //optional
-    ssl: true
+    host: process.env.HOSTNAME || 'localhost',
+    port: process.env.PORT || '3307',
+    database: process.env.DATABASE || 'chameleonfantasies', //optional
+    user: process.env.USER || 'cf', //optional
+    password: process.env.PASSWORD || '1234', //optional
+    ssl: process.env.SSL || false,
+    poolSize: process.env.PS || 10
   }
 
 
