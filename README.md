@@ -3,6 +3,8 @@
 ## Descrição
 Uma aplicação para gerenciamento de clientes, fantasias e funcionários.
 
+*Descontinuado*
+
 Tecnologias utilizadas/Versão: 
  * Sprint Tool Suite [Eclipse Oxygen (4.7.0)]
  * Maven [Apache Maven 3.5.0]
@@ -15,15 +17,15 @@ Tecnologias utilizadas/Versão:
 ---
 ## Casos de Uso
 
-![Casos de Uso]()
+*Descontinuado*
 
 ## Diagrama de Componentes do Sistema
 
-![Diagrama de Componentes do Sistema]()
+*Descontinuado*
 
 ## Downloads
 
-* [Source Files](/chameleonfantasies/old_versions/v3/v3.zip)
+* [Source Files](https://github.com/vsychen/chameleonfantasies/raw/v3/v3.zip)
 
 ---
 ## Instruções
