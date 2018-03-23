@@ -76,7 +76,7 @@ module.exports.connections = {
   ***************************************************************************/
   chameleonfantasies: {
     adapter: 'sails-postgresql',
-    host: process.env.HOSTNAME || 'localhost',
+    host: process.env.HOST || 'localhost',
     port: process.env.PORT || '3307',
     database: process.env.DATABASE || 'chameleonfantasies', //optional
     user: process.env.USER || 'cf', //optional
