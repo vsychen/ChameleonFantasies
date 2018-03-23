@@ -34,6 +34,9 @@ Tecnologias utilizadas/Versão:
 
 #### HerokuApp
 1. [App](https://chameleonfantasies.herokuapp.com) ![Heroku](https://heroku-badge.herokuapp.com/?app=chameleonfantasies)
+2. Credenciais:
+    * E-mail: *admin@cf.com*
+    * Senha: *admin*
 
 #### Arquivo .zip
 
