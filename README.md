@@ -1,7 +1,7 @@
 # Download
 
-* [JAR File](/chameleonfantasies/old_versions/v1/ChameleonFantasies_v1.jar)
-* [Source Files](/chameleonfantasies/old_versions/v1/v1.zip)
+* [JAR File](https://github.com/vsychen/chameleonfantasies/raw/v1/ChameleonFantasies_v1.jar)
+* [Source Files](https://github.com/vsychen/chameleonfantasies/raw/v1/v1.zip)
 
 ---
 # Instructions
