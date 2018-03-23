@@ -9,8 +9,8 @@ Tecnologias utilizadas/Versão:
 ---
 ## Downloads
 
-* [Source Files](https://github.com/vsychen/chameleonfantasies/raw/master/v4.zip)
-* [Modules](https://github.com/vsychen/chameleonfantasies/raw/master/node_modules.zip), if needed
+* [Código Fonte](https://github.com/vsychen/chameleonfantasies/raw/master/v4.zip)
+* [Módulos](https://github.com/vsychen/chameleonfantasies/raw/master/node_modules.zip), se necessário
 
 ---
 ## Observações
