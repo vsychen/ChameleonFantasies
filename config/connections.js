@@ -76,11 +76,11 @@ module.exports.connections = {
   ***************************************************************************/
   chameleonfantasies: {
     adapter: 'sails-postgresql',
-    host: 'ec2-54-235-146-51.compute-1.amazonaws.com',
-    port: '5432',
-    user: 'elckiycbevyasu', //optional
-    password: '9d6c4e7143c6e37b8b8d6f3c1b4bbf5d1d9970dc87cafca6d97bc57a7b43a7ca', //optional
-    database: 'dc4f4rjkpf0na8', //optional
+    host: process.env.PG_HOSTNAME || 'localhost',
+    port: process.env.PG_PORT || '5432',
+    database: process.env.PG_DATABASE || 'chameleonfantasies', //optional
+    user: process.env.PG_USER || 'cf', //optional
+    password: process.env.PG_PASSWORD || '1234', //optional
     poolSize: 50
   }
 

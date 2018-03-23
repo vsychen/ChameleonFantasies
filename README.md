@@ -30,7 +30,7 @@ Tecnologias utilizadas/Versão:
 ## Instruções
 
 #### HerokuApp
-1. ![App](https://chameleonfantasies.herokuapp.com)
+1. [App](https://chameleonfantasies.herokuapp.com)
 
 #### Arquivo .zip
 
