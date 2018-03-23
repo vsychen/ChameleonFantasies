@@ -14,22 +14,32 @@ Tecnologias utilizadas/Versão:
 * [Source Files](/chameleonfantasies/v4/v4.zip)
 
 ---
-## Instruções
-
-1. Instale o Sails.js
-    * *npm install sails -g*
-2. Execute a aplicação
-    * *sails lift*
-
----
 ## Observações
 
-Lembrar de configurar o MySQL na máquina antes de qualquer outra ação. Os valores estão configurados em **/config/connections.js** e são:
- * Username: **cf**
- * Password: **1234**
- * Url: **mysql://localhost:3306/chameleonfantasies**
+ * Caso não vá testar no Heroku, é necessário ter MySQL ou PostgreSQL instalado na máquina.
+ * Altere os valores configurados em **/config/connections.js**
+   * adapter
+   * host
+   * port
+   * user
+   * password
+   * database
+   * poolSize (caso esteja usando MySQL, delete este valor)
 
-Caso seja decidido algum outro valor para algum dos três campos, alterar o arquivo **/config/connections.js**
+---
+## Instruções
+
+#### HerokuApp
+1. ![App](https://chameleonfantasies.herokuapp.com)
+
+#### Arquivo .zip
+
+1. Caso vá usar MySQL, instale o adaptador para MySQL
+    * *npm install sails-mysql --save*
+2. Instale o sails localmente
+    * *npm install sails*
+3. Execute a aplicação
+    * *node app.js*
 
 ---
 ## Permissão [License]

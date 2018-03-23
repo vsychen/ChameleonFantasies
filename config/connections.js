@@ -40,13 +40,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql@for-sails-0.12 --save                       *
   *                                                                          *
   ***************************************************************************/
-  chameleonfantasies: {
-    adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'cf', //optional
-    password: '1234', //optional
-    database: 'chameleonfantasies' //optional
-  },
+  // chameleonfantasies: {
+  //   adapter: 'sails-mysql',
+  //   host: 'localhost',
+  //   user: 'cf', //optional
+  //   password: '1234', //optional
+  //   database: 'chameleonfantasies' //optional
+  // },
 
   /***************************************************************************
   *                                                                          *
@@ -74,13 +74,15 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  // somePostgresqlServer: {
-  //   adapter: 'sails-postgresql',
-  //   host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-  //   user: 'YOUR_POSTGRES_USER', // optional
-  //   password: 'YOUR_POSTGRES_PASSWORD', // optional
-  //   database: 'YOUR_POSTGRES_DB' //optional
-  // }
+  chameleonfantasies: {
+    adapter: 'sails-postgresql',
+    host: 'ec2-54-235-146-51.compute-1.amazonaws.com',
+    port: '5432',
+    user: 'elckiycbevyasu', //optional
+    password: '9d6c4e7143c6e37b8b8d6f3c1b4bbf5d1d9970dc87cafca6d97bc57a7b43a7ca', //optional
+    database: 'dc4f4rjkpf0na8', //optional
+    poolSize: 50
+  }
 
 
   /***************************************************************************
