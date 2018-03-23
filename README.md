@@ -9,7 +9,8 @@ Tecnologias utilizadas/Versão:
 ---
 ## Downloads
 
-* [Source Files](/chameleonfantasies/v4/v4.zip)
+* [Source Files](/chameleonfantasies/v4.zip)
+* [Modules](/chameleonfantasies/node_modules.zip), if needed
 
 ---
 ## Observações
