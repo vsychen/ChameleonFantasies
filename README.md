@@ -15,8 +15,9 @@ Tecnologias utilizadas/Versão:
 
 ---
 ## Observações
+#### Caso não vá testar no Heroku
 
- * Caso não vá testar no Heroku, é necessário ter MySQL ou PostgreSQL instalado na máquina.
+ * É necessário ter MySQL ou PostgreSQL instalado na máquina.
  * Altere os valores configurados em **/config/connections.js**
    * adapter
    * host
@@ -26,6 +27,8 @@ Tecnologias utilizadas/Versão:
    * password
    * ssl (remova este valor)
    * poolSize (caso esteja usando MySQL, remova este valor)
+ * Altere os valores configurados em **/config/models.js**
+   * migrate (altere para 'alter')
 
 ---
 ## Instruções
