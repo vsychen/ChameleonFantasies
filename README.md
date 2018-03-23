@@ -1,7 +1,5 @@
 # Chameleon Fantasies v4
 
-![Heroku](https://heroku-badge.herokuapp.com/?app=chameleonfantasies)
-
 ## Descrição
 Uma aplicação de catálogo de fantasias.
 
@@ -31,7 +29,7 @@ Tecnologias utilizadas/Versão:
 ## Instruções
 
 #### HerokuApp
-1. [App](https://chameleonfantasies.herokuapp.com)
+1. [App](https://chameleonfantasies.herokuapp.com) ![Heroku](https://heroku-badge.herokuapp.com/?app=chameleonfantasies)
 
 #### Arquivo .zip
 
