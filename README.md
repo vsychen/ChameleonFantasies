@@ -7,29 +7,6 @@ Tecnologias utilizadas/Versão:
  * Sails.js [Framework MVC baseado em Node.js]
 
 ---
-## Downloads
-
-* [Código Fonte](https://github.com/vsychen/chameleonfantasies/raw/master/v4.zip)
-* [Módulos](https://github.com/vsychen/chameleonfantasies/raw/master/node_modules.zip), se necessário
-
----
-## Observações
-#### Caso não vá testar no Heroku
-
- * É necessário ter MySQL ou PostgreSQL instalado na máquina.
- * Altere os valores configurados em **/config/connections.js**
-   * adapter
-   * host
-   * port
-   * database
-   * user
-   * password
-   * ssl (remova este valor)
-   * poolSize (caso esteja usando MySQL, remova este valor)
- * Altere os valores configurados em **/config/models.js**
-   * migrate (altere para 'alter')
-
----
 ## Instruções
 
 #### HerokuApp
@@ -40,12 +17,34 @@ Tecnologias utilizadas/Versão:
 
 #### Arquivo .zip
 
-1. Caso vá usar MySQL, instale o adaptador para MySQL
-    * *npm install sails-mysql --save*
-2. Instale o sails localmente
-    * *npm install sails*
+1. Instale as dependencias do app
+    1.1 *npm install*
+2. Caso vá usar o MySQL
+    1.1. Instale o módulo do MySQL: *npm install sails-mysql --save*
+    1.2. Vá em *config/connections.js*, comente a configuração do PostgreSQL e descomente a configuração do MySQL
 3. Execute a aplicação
     * *node app.js*
+
+---
+## Downloads
+
+* [Código Fonte](https://github.com/vsychen/chameleonfantasies/raw/master/v4.zip)
+* [Módulos](https://github.com/vsychen/chameleonfantasies/raw/master/node_modules.zip), se necessário
+
+---
+## Observações
+#### Caso não vá testar no Heroku
+
+ * É necessário ter MySQL ou PostgreSQL instalado na máquina.
+ * Caso queira, altere os valores configurados em **/config/connections.js**
+   * adapter
+   * host
+   * port
+   * database
+   * user
+   * password
+ * Altere os valores configurados em **/config/models.js**
+   * migrate (altere para 'alter')
 
 ---
 ## Permissão [License]
