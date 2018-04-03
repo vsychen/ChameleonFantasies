@@ -18,12 +18,12 @@ Tecnologias utilizadas/Versão:
 #### Arquivo .zip
 
 1. Instale as dependencias do app
-    1.1 *npm install*
+    1. *npm install*
 2. Caso vá usar o MySQL
-    1.1. Instale o módulo do MySQL: *npm install sails-mysql --save*
-    1.2. Vá em *config/connections.js*, comente a configuração do PostgreSQL e descomente a configuração do MySQL
+    1. Instale o módulo do MySQL: *npm install sails-mysql --save*
+    2. Vá em *config/connections.js*, comente a configuração do PostgreSQL e descomente a configuração do MySQL
 3. Execute a aplicação
-    * *node app.js*
+    1. *node app.js*
 
 ---
 ## Downloads
