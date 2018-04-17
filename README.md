@@ -49,8 +49,6 @@ Tecnologias utilizadas/Versão:
 ---
 ## Permissão [License]
 
-Copyright (c) 2018 Victor Sin Yu Chen
+[The MIT License](https://github.com/vsychen/chameleonfantasies/raw/master/LICENSE.md) - Copyright (c) 2018 Victor Sin Yu Chen
 
-Github Corners - Copyright (c) 2016 Tim Holman
-
-[The MIT License](https://github.com/vsychen/chameleonfantasies/raw/master/LICENSE.md)
+[Github Corners](https://github.com/tholman/github-corners/raw/master/license.md) - Copyright (c) 2016 Tim Holman
